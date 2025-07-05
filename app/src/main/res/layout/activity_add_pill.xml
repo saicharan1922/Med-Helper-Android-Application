@@ -1,0 +1,206 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/pill_name_label_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pill Name" />
+
+    <LinearLayout
+        android:id="@+id/ll_pill_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/pill_name_label_text_view"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        >
+        <EditText
+            android:id="@+id/pill_name_edit_text"
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="48dp"
+            android:hint="Enter pill name" />
+        <ImageView
+            android:id="@+id/camera_icon_image_view"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/pill_name_edit_text"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_camera"
+            android:padding="8dp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/reminder_time_label_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_pill_name_edit_text"
+        android:layout_marginTop="16dp"
+        android:text="Reminder Time" />
+    <TextView
+        android:id="@+id/reminder_time_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminder_time_label_text_view"
+        android:layout_marginTop="8dp"
+        android:layout_alignStart="@id/ll_pill_name_edit_text"
+        android:text="00:00" />
+
+    <TextView
+        android:id="@+id/schedule_label_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminder_time_text_view"
+        android:layout_marginTop="16dp"
+        android:text="Schedule" />
+
+    <LinearLayout
+        android:id="@+id/schedule_buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/schedule_label_text_view"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/monday_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Mo"
+            android:background="@drawable/button_normal"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tuesday_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Tu"
+            android:background="@drawable/button_normal"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/wednesday_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="We"
+            android:background="@drawable/button_normal"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/thursday_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Th"
+            android:background="@drawable/button_normal"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/friday_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Fr"
+            android:background="@drawable/button_normal"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/saturday_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Sa"
+            android:background="@drawable/button_normal"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sunday_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Su"
+            android:background="@drawable/button_normal"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"/>
+
+    </LinearLayout>
+
+    <!-- Buttons layout -->
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/schedule_buttons_layout"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"/>
+
+        <Button
+            android:id="@+id/set_alarm_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Alarm"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/camera_view_holder"
+        >
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/camera_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+
+        <View
+            android:id="@+id/rectangle_view"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="@drawable/rectangle_border"
+            android:visibility="gone"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+
+            <Button
+                android:id="@+id/done_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Done"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>
